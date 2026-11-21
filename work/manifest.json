@@ -1,0 +1,510 @@
+{
+  "source": "https://www.maniacba.com.ar/",
+  "host": "www.maniacba.com.ar",
+  "started": "2026-11-21T18:13:08.867Z",
+  "entries": [
+    {
+      "url": "https://www.maniacba.com.ar/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "file": "index.html"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/reglas/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "file": "reglas/index.html"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/politica-de-privacidade/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "file": "politica-de-privacidade/index.html"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/juego-responsable/",
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "file": "juego-responsable/index.html"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/cache/static-site/assets/autoptimize_0f12a06e6dbca6a0f3815cd9e13940f6.css",
+      "status": 200,
+      "contentType": "text/css",
+      "file": "wp-content/cache/static-site/assets/autoptimize_0f12a06e6dbca6a0f3815cd9e13940f6.css"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/10/cropped-faviconV21-32x32.png",
+      "status": 200,
+      "contentType": "image/png",
+      "file": "wp-content/uploads/2026/10/cropped-faviconV21-32x32.png"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/10/cropped-faviconV21-192x192.png",
+      "status": 200,
+      "contentType": "image/png",
+      "file": "wp-content/uploads/2026/10/cropped-faviconV21-192x192.png"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/10/cropped-faviconV21-180x180.png",
+      "status": 200,
+      "contentType": "image/png",
+      "file": "wp-content/uploads/2026/10/cropped-faviconV21-180x180.png"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/1win-argentina.svg",
+      "status": 200,
+      "contentType": "image/svg+xml",
+      "file": "wp-content/uploads/2026/09/1win-argentina.svg"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/welcome-section-1024x822.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/welcome-section-1024x822.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/bonus-150x150.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/bonus-150x150.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/sport-150x150.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/sport-150x150.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/casino-150x150.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/casino-150x150.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/vip-150x150.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/vip-150x150.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/lucky-jet.avif",
+      "status": 200,
+      "contentType": "image/avif",
+      "file": "wp-content/uploads/2026/09/lucky-jet.avif"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/mines-classic.avif",
+      "status": 200,
+      "contentType": "image/avif",
+      "file": "wp-content/uploads/2026/09/mines-classic.avif"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/mines.avif",
+      "status": 200,
+      "contentType": "image/avif",
+      "file": "wp-content/uploads/2026/09/mines.avif"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/penalty.avif",
+      "status": 200,
+      "contentType": "image/avif",
+      "file": "wp-content/uploads/2026/09/penalty.avif"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/rocket-queen.avif",
+      "status": 200,
+      "contentType": "image/avif",
+      "file": "wp-content/uploads/2026/09/rocket-queen.avif"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/blackjack.avif",
+      "status": 200,
+      "contentType": "image/avif",
+      "file": "wp-content/uploads/2026/09/blackjack.avif"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/juegos-disponibles.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/juegos-disponibles.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/bonos.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/bonos.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/welcome.avif",
+      "status": 200,
+      "contentType": "image/avif",
+      "file": "wp-content/uploads/2026/09/welcome.avif"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/sport.avif",
+      "status": 200,
+      "contentType": "image/avif",
+      "file": "wp-content/uploads/2026/09/sport.avif"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/drive.avif",
+      "status": 200,
+      "contentType": "image/avif",
+      "file": "wp-content/uploads/2026/09/drive.avif"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/register.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/register.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/ios.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/ios.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/android.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/android.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/paysafecard.svg",
+      "status": 200,
+      "contentType": "image/svg+xml",
+      "file": "wp-content/uploads/2026/09/paysafecard.svg"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/Mercado_Pago_Logo_H.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/Mercado_Pago_Logo_H.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/payment-bitcoin.svg",
+      "status": 200,
+      "contentType": "image/svg+xml",
+      "file": "wp-content/uploads/2026/09/payment-bitcoin.svg"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/payment-tether.svg",
+      "status": 200,
+      "contentType": "image/svg+xml",
+      "file": "wp-content/uploads/2026/09/payment-tether.svg"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/gamecheck.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/gamecheck.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/18.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/18.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/cache/static-site/assets/autoptimize_c552a221896cbfcf9ccdf9529e85f108.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8",
+      "file": "wp-content/cache/static-site/assets/autoptimize_c552a221896cbfcf9ccdf9529e85f108.js"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/welcome-section-450x361.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/welcome-section-450x361.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/welcome-section-150x120.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/welcome-section-150x120.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/welcome-section-768x617.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/welcome-section-768x617.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/welcome-section-1536x1233.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/welcome-section-1536x1233.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/welcome-section.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/welcome-section.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/bonus-450x450.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/bonus-450x450.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/bonus-1024x1024.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/bonus-1024x1024.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/bonus-768x768.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/bonus-768x768.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/bonus.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/bonus.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/sport-450x450.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/sport-450x450.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/sport-1024x1024.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/sport-1024x1024.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/sport-768x768.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/sport-768x768.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/sport.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/sport.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/casino-450x450.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/casino-450x450.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/casino-1024x1024.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/casino-1024x1024.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/casino-768x768.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/casino-768x768.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/casino.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/casino.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/vip-450x450.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/vip-450x450.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/vip-1024x1024.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/vip-1024x1024.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/vip-768x768.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/vip-768x768.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/vip.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/vip.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/juegos-disponibles-450x264.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/juegos-disponibles-450x264.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/juegos-disponibles-1024x600.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/juegos-disponibles-1024x600.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/juegos-disponibles-150x88.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/juegos-disponibles-150x88.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/juegos-disponibles-768x450.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/juegos-disponibles-768x450.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/juegos-disponibles-1536x900.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/juegos-disponibles-1536x900.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/bonos-368x450.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/bonos-368x450.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/bonos-123x150.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/bonos-123x150.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/bonos-768x940.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/bonos-768x940.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/welcome-450x190.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "file": "wp-content/uploads/2026/09/welcome-450x190.jpg"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/welcome-150x63.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "file": "wp-content/uploads/2026/09/welcome-150x63.jpg"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/sport-450x189.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "file": "wp-content/uploads/2026/09/sport-450x189.jpg"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/sport-150x63.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "file": "wp-content/uploads/2026/09/sport-150x63.jpg"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/drive-450x190.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "file": "wp-content/uploads/2026/09/drive-450x190.jpg"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/drive-150x63.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "file": "wp-content/uploads/2026/09/drive-150x63.jpg"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/uploads/2026/09/register-74x150.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "file": "wp-content/uploads/2026/09/register-74x150.webp"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/themes/jupiter/assets/dist/fonts/montserrat/montserrat-italic-cyrillic-ext.woff2",
+      "status": 200,
+      "contentType": "font/woff2",
+      "file": "wp-content/themes/jupiter/assets/dist/fonts/montserrat/montserrat-italic-cyrillic-ext.woff2"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/themes/jupiter/assets/dist/fonts/montserrat/montserrat-italic-cyrillic.woff2",
+      "status": 200,
+      "contentType": "font/woff2",
+      "file": "wp-content/themes/jupiter/assets/dist/fonts/montserrat/montserrat-italic-cyrillic.woff2"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/themes/jupiter/assets/dist/fonts/montserrat/montserrat-italic-vietnamese.woff2",
+      "status": 200,
+      "contentType": "font/woff2",
+      "file": "wp-content/themes/jupiter/assets/dist/fonts/montserrat/montserrat-italic-vietnamese.woff2"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/themes/jupiter/assets/dist/fonts/montserrat/montserrat-italic-latin-ext.woff2",
+      "status": 200,
+      "contentType": "font/woff2",
+      "file": "wp-content/themes/jupiter/assets/dist/fonts/montserrat/montserrat-italic-latin-ext.woff2"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/themes/jupiter/assets/dist/fonts/montserrat/montserrat-italic-latin.woff2",
+      "status": 200,
+      "contentType": "font/woff2",
+      "file": "wp-content/themes/jupiter/assets/dist/fonts/montserrat/montserrat-italic-latin.woff2"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/themes/jupiter/assets/dist/fonts/montserrat/montserrat-regular-cyrillic-ext.woff2",
+      "status": 200,
+      "contentType": "font/woff2",
+      "file": "wp-content/themes/jupiter/assets/dist/fonts/montserrat/montserrat-regular-cyrillic-ext.woff2"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/themes/jupiter/assets/dist/fonts/montserrat/montserrat-regular-cyrillic.woff2",
+      "status": 200,
+      "contentType": "font/woff2",
+      "file": "wp-content/themes/jupiter/assets/dist/fonts/montserrat/montserrat-regular-cyrillic.woff2"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/themes/jupiter/assets/dist/fonts/montserrat/montserrat-regular-vietnamese.woff2",
+      "status": 200,
+      "contentType": "font/woff2",
+      "file": "wp-content/themes/jupiter/assets/dist/fonts/montserrat/montserrat-regular-vietnamese.woff2"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/themes/jupiter/assets/dist/fonts/montserrat/montserrat-regular-latin-ext.woff2",
+      "status": 200,
+      "contentType": "font/woff2",
+      "file": "wp-content/themes/jupiter/assets/dist/fonts/montserrat/montserrat-regular-latin-ext.woff2"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/wp-content/themes/jupiter/assets/dist/fonts/montserrat/montserrat-regular-latin.woff2",
+      "status": 200,
+      "contentType": "font/woff2",
+      "file": "wp-content/themes/jupiter/assets/dist/fonts/montserrat/montserrat-regular-latin.woff2"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/robots.txt",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/sitemap_index.xml",
+      "status": 200,
+      "contentType": "application/xml; charset=utf-8",
+      "file": "sitemap_index.xml"
+    },
+    {
+      "url": "https://www.maniacba.com.ar/page-sitemap.xml",
+      "status": 200,
+      "contentType": "application/xml; charset=utf-8",
+      "file": "page-sitemap.xml"
+    }
+  ]
+}
