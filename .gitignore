@@ -1,0 +1,9 @@
+node_modules/
+work/
+stage/
+dist/
+.dist-next/
+.dist-backup/
+deliverables/
+content/
+*.log

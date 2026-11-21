@@ -1,0 +1,38 @@
+{
+  "name": "1win-template-adapter",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "scrape": "node --import tsx scripts/scrape.ts",
+    "extract": "node --import tsx scripts/extract.ts",
+    "clean": "node --import tsx scripts/clean.ts",
+    "populate": "node --import tsx scripts/populate.ts",
+    "format": "node --import tsx scripts/format.ts",
+    "minify": "node --import tsx scripts/minify.ts",
+    "validate": "node --import tsx scripts/validate.ts",
+    "prepare": "npm run extract && npm run clean && npm run populate",
+    "build": "npm run prepare && npm run minify && npm run validate && npm run package",
+    "package": "node --import tsx scripts/package.ts",
+    "typecheck": "tsc --noEmit",
+    "serve": "node --import tsx scripts/serve.ts",
+    "serve:stage": "node --import tsx scripts/serve.ts --stage",
+    "browser-check": "node --import tsx scripts/browser-check.ts"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "mammoth": "^1.9.1"
+  },
+  "devDependencies": {
+    "@types/clean-css": "^4.2.11",
+    "@types/html-minifier-terser": "^7.0.2",
+    "@types/node": "^22.0.0",
+    "clean-css": "^5.3.3",
+    "html-minifier-terser": "^7.2.0",
+    "playwright": "^1.65.1",
+    "prettier": "^3.10.1",
+    "terser": "^5.51.4",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0"
+  }
+}
