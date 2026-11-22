@@ -21,6 +21,7 @@ async function main() {
   if (site.pages.every(page => existsSync(routeFile(page.route))) && await exists(path.join(dist, 'sitemap.xml'))) {
     await run('npm', ['run', 'validate'], { cwd: root });
     const entries = ['dist', 'stage', 'scripts', 'config', 'assets', 'content', 'input/content', 'package.json', 'package-lock.json', 'tsconfig.json', 'README.md', 'REPORT.md'];
+    if (await exists(path.join(root, '.github'))) entries.push('.github');
     if (await exists(path.join(root, 'qa'))) entries.push('qa');
     await zip(path.join(output, 'finished-site.zip'), entries);
   } else console.log('Skipped finished-site.zip: finished site is incomplete');

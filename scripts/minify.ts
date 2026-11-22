@@ -4,7 +4,7 @@ import CleanCSS from 'clean-css';
 import { minify as minifyHtml } from 'html-minifier-terser';
 import { minify as minifyJs } from 'terser';
 import { confirmReplacement } from './confirm.js';
-import { dist, exists, root, stage, write } from './common.js';
+import { dist, exists, root, routeFile, stage, write } from './common.js';
 import { site } from '../config/site.js';
 
 async function filesUnder(directory: string): Promise<string[]> {
@@ -18,8 +18,8 @@ async function filesUnder(directory: string): Promise<string[]> {
 
 async function main() {
   for (const page of site.pages) {
-    if (!await exists(path.join(stage, page.route.replace(/^\/+/, ''), 'index.html'))) {
-      throw new Error(`stage/ is missing ${page.route}index.html`);
+    if (!await exists(routeFile(page.route, stage))) {
+      throw new Error(`stage/ is missing ${page.route}`);
     }
   }
   if (!await exists(path.join(stage, 'sitemap.xml'))) throw new Error('stage/ is missing sitemap.xml');

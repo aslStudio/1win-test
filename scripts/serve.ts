@@ -44,12 +44,23 @@ export function createStaticServer(directory = dist, liveReload = false, mountPa
       }
       let relative = decodeURIComponent(prefix ? url.pathname.slice(prefix.length) : url.pathname).replace(/^\/+/, '');
       if (!relative || relative.endsWith('/')) relative += 'index.html';
-      const file = path.resolve(directory, relative);
+      let file = path.resolve(directory, relative);
       if (!file.startsWith(directory + path.sep)) {
         response.writeHead(403).end();
         return;
       }
-      let data: Buffer | string = await fs.readFile(file);
+      let data: Buffer | string;
+      try {
+        data = await fs.readFile(file);
+      } catch (error) {
+        if ((error as NodeJS.ErrnoException).code !== 'ENOENT' || path.extname(relative)) throw error;
+        file = path.resolve(directory, relative + '.html');
+        if (!file.startsWith(directory + path.sep)) {
+          response.writeHead(403).end();
+          return;
+        }
+        data = await fs.readFile(file);
+      }
       if (liveReload && path.extname(file) === '.html') {
         const html = data.toString();
         data = html.includes('</body>') ? html.replace('</body>', reloadClient + '</body>') : html + reloadClient;

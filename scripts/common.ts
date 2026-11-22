@@ -33,11 +33,11 @@ export function relativeUrlPath(input: string) {
 }
 
 export function routeFile(route: string, base = dist) {
-  return path.join(base, route.replace(/^\/+/, ''), 'index.html');
+  return route === '/' ? path.join(base, 'index.html') : path.join(base, route.replace(/^\/+/, '') + '.html');
 }
 
 export function targetUrl(route: string) {
-  return site.targetOrigin + route;
+  return site.canonicalBase + route;
 }
 
 export function assertApprovedSource() {

@@ -11,8 +11,8 @@ const allowed = new Set<string>(site.pages.map(page => page.route));
 function localRoute(href: string, base: string) {
   try {
     const url = new URL(href, base);
-    if (url.origin !== site.targetOrigin && url.hostname !== site.sourceHost) return null;
-    const route = url.pathname.replace(/index\.html$/, '');
+    if (url.origin !== site.contentOrigin && url.hostname !== site.sourceHost) return null;
+    const route = url.pathname.replace(/index\.html$/, '').replace(/\/$/, '') || '/';
     return allowed.has(route) ? route + url.hash : null;
   } catch { return null; }
 }
@@ -36,7 +36,7 @@ async function main() {
   }
   await copyAssets(original);
   for (const page of site.pages) {
-    const pageFile = page.route.replace(/^\/+/, '') + 'index.html';
+    const pageFile = path.relative(stage, routeFile(page.route, stage)).replaceAll(path.sep, '/');
     const sourceFile = page.route === '/' ? path.join(work, 'index.html') : routeFile(page.route, work);
     if (!await exists(sourceFile)) {
       // The home template supplies a consistent shell when the approved source has no matching route.

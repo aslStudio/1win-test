@@ -20,7 +20,7 @@ async function main() {
   }
   if (stageAlreadyPopulated) await confirmReplacement(stage);
   for (const page of site.pages) {
-    const pageFile = page.route.replace(/^\/+/, '') + 'index.html';
+    const pageFile = path.relative(stage, routeFile(page.route, stage)).replaceAll(path.sep, '/');
     const recordFile = path.join(root, 'content', `${page.key}.json`);
     if (!await exists(recordFile)) throw new Error(`Missing extracted content: ${recordFile}`);
     const record = JSON.parse(await fs.readFile(recordFile, 'utf8')) as RecordData;
@@ -31,8 +31,8 @@ async function main() {
       const text = article(el).text();
       const href = article(el).attr('href') || '';
       try {
-        const url = new URL(href, site.targetOrigin);
-        if (url.origin !== site.targetOrigin || !site.pages.some(p => p.route === url.pathname)) article(el).replaceWith(text);
+        const url = new URL(href, site.contentOrigin);
+        if (url.origin !== site.contentOrigin || !site.pages.some(p => p.route === url.pathname)) article(el).replaceWith(text);
         else article(el).attr('href', relativeSiteUrl(pageFile, url.pathname + url.search + url.hash));
       } catch { article(el).replaceWith(text); }
     });
@@ -125,9 +125,10 @@ async function main() {
     $root.empty().append('<article class="docx-content">' + heroHtml + '<div class="docx-content__sections">' + sectionHtml + '</div></article>');
     $('head title').remove();
     $('head').append(`<title>${escapeHtml(record.title)}</title>`);
-    $('head meta[name="description"],head link[rel="canonical"],head link[rel="alternate"],head meta[property^="og:"]').remove();
+    $('head meta[name="description"],head meta[name="robots"],head link[rel="canonical"],head link[rel="alternate"],head meta[property^="og:"]').remove();
     const canonical = targetUrl(page.route);
     $('head').append(`<meta name="description" content="${escapeHtml(record.description)}">`);
+    $('head').append(`<meta name="robots" content="${site.robotsDirective}">`);
     $('head').append(`<link rel="canonical" href="${canonical}"><link rel="alternate" hreflang="${site.locale}" href="${canonical}">`);
     $('head').append(`<meta property="og:url" content="${canonical}"><meta property="og:title" content="${escapeHtml(record.title)}"><meta property="og:description" content="${escapeHtml(record.description)}">`);
     $('head').append(`<link rel="stylesheet" href="${relativeSiteUrl(pageFile, '/assets/adapter.css')}">`);
@@ -146,7 +147,7 @@ async function main() {
   await write(path.join(stage, 'assets/adapter.css'), await fs.readFile(path.join(root, 'assets/adapter.css')));
   await write(path.join(stage, 'assets/adapter.js'), await fs.readFile(path.join(root, 'assets/adapter.js')));
   await write(path.join(stage, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${site.pages.map(p => `  <url><loc>${targetUrl(p.route)}</loc></url>`).join('\n')}\n</urlset>\n`);
-  await write(path.join(stage, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${site.targetOrigin}/sitemap.xml\n`);
+  await write(path.join(stage, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${targetUrl('/')}sitemap.xml\n`);
   await formatStage();
   console.log('Populated and formatted three pages in stage/');
 }
