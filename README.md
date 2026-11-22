@@ -31,9 +31,9 @@ npm run clean       # рабочая копия и три оболочки в st
 npm run populate    # контент, изображения, SEO, GOL5 и форматирование stage/
 npm run format      # повторное форматирование читаемого stage/
 npm run minify      # минимизация stage/ -> dist/
-npm run prepare     # extract -> clean -> populate
+npm run prepare:site # extract -> clean -> populate
 npm run validate    # статические проверки
-npm run build       # prepare -> minify -> validate -> package
+npm run build       # prepare:site -> minify -> validate -> package
 npm run package     # обновить ZIP-архивы
 npm run typecheck
 npm run serve       # http://localhost:4173

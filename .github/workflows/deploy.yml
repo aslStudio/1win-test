@@ -7,6 +7,9 @@ on:
       - main
     paths:
       - 'dist/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'scripts/validate.ts'
       - '.github/workflows/deploy.yml'
   workflow_dispatch:
 
