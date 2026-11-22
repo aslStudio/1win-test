@@ -421,7 +421,7 @@ p {
   font-family: Montserrat;
   font-style: italic;
   font-weight: 100 900;
-  src: url(/wp-content/themes/jupiter/assets/dist/css/../fonts/montserrat/montserrat-italic-cyrillic-ext.woff2)
+  src: url(../../../themes/jupiter/assets/dist/fonts/montserrat/montserrat-italic-cyrillic-ext.woff2)
     format('woff2');
   unicode-range: u+0460-052f, u+1c80-1c88, u+20b4, u+2de0-2dff, u+a640-a69f, u+fe2e-fe2f;
 }
@@ -430,7 +430,7 @@ p {
   font-family: Montserrat;
   font-style: italic;
   font-weight: 100 900;
-  src: url(/wp-content/themes/jupiter/assets/dist/css/../fonts/montserrat/montserrat-italic-cyrillic.woff2)
+  src: url(../../../themes/jupiter/assets/dist/fonts/montserrat/montserrat-italic-cyrillic.woff2)
     format('woff2');
   unicode-range: u+0301, u+0400-045f, u+0490-0491, u+04b0-04b1, u+2116;
 }
@@ -439,7 +439,7 @@ p {
   font-family: Montserrat;
   font-style: italic;
   font-weight: 100 900;
-  src: url(/wp-content/themes/jupiter/assets/dist/css/../fonts/montserrat/montserrat-italic-vietnamese.woff2)
+  src: url(../../../themes/jupiter/assets/dist/fonts/montserrat/montserrat-italic-vietnamese.woff2)
     format('woff2');
   unicode-range:
     u+0102-0103, u+0110-0111, u+0128-0129, u+0168-0169, u+01a0-01a1, u+01af-01b0, u+0300-0301,
@@ -450,7 +450,7 @@ p {
   font-family: Montserrat;
   font-style: italic;
   font-weight: 100 900;
-  src: url(/wp-content/themes/jupiter/assets/dist/css/../fonts/montserrat/montserrat-italic-latin-ext.woff2)
+  src: url(../../../themes/jupiter/assets/dist/fonts/montserrat/montserrat-italic-latin-ext.woff2)
     format('woff2');
   unicode-range:
     u+0100-02af, u+0304, u+0308, u+0329, u+1e00-1e9f, u+1ef2-1eff, u+2020, u+20a0-20ab, u+20ad-20c0,
@@ -461,7 +461,7 @@ p {
   font-family: Montserrat;
   font-style: italic;
   font-weight: 100 900;
-  src: url(/wp-content/themes/jupiter/assets/dist/css/../fonts/montserrat/montserrat-italic-latin.woff2)
+  src: url(../../../themes/jupiter/assets/dist/fonts/montserrat/montserrat-italic-latin.woff2)
     format('woff2');
   unicode-range:
     u+00??, u+0131, u+0152-0153, u+02bb-02bc, u+02c6, u+02da, u+02dc, u+0304, u+0308, u+0329,
@@ -472,7 +472,7 @@ p {
   font-family: Montserrat;
   font-style: normal;
   font-weight: 100 900;
-  src: url(/wp-content/themes/jupiter/assets/dist/css/../fonts/montserrat/montserrat-regular-cyrillic-ext.woff2)
+  src: url(../../../themes/jupiter/assets/dist/fonts/montserrat/montserrat-regular-cyrillic-ext.woff2)
     format('woff2');
   unicode-range: u+0460-052f, u+1c80-1c88, u+20b4, u+2de0-2dff, u+a640-a69f, u+fe2e-fe2f;
 }
@@ -481,7 +481,7 @@ p {
   font-family: Montserrat;
   font-style: normal;
   font-weight: 100 900;
-  src: url(/wp-content/themes/jupiter/assets/dist/css/../fonts/montserrat/montserrat-regular-cyrillic.woff2)
+  src: url(../../../themes/jupiter/assets/dist/fonts/montserrat/montserrat-regular-cyrillic.woff2)
     format('woff2');
   unicode-range: u+0301, u+0400-045f, u+0490-0491, u+04b0-04b1, u+2116;
 }
@@ -490,7 +490,7 @@ p {
   font-family: Montserrat;
   font-style: normal;
   font-weight: 100 900;
-  src: url(/wp-content/themes/jupiter/assets/dist/css/../fonts/montserrat/montserrat-regular-vietnamese.woff2)
+  src: url(../../../themes/jupiter/assets/dist/fonts/montserrat/montserrat-regular-vietnamese.woff2)
     format('woff2');
   unicode-range:
     u+0102-0103, u+0110-0111, u+0128-0129, u+0168-0169, u+01a0-01a1, u+01af-01b0, u+0300-0301,
@@ -501,7 +501,7 @@ p {
   font-family: Montserrat;
   font-style: normal;
   font-weight: 100 900;
-  src: url(/wp-content/themes/jupiter/assets/dist/css/../fonts/montserrat/montserrat-regular-latin-ext.woff2)
+  src: url(../../../themes/jupiter/assets/dist/fonts/montserrat/montserrat-regular-latin-ext.woff2)
     format('woff2');
   unicode-range:
     u+0100-02af, u+0304, u+0308, u+0329, u+1e00-1e9f, u+1ef2-1eff, u+2020, u+20a0-20ab, u+20ad-20c0,
@@ -512,7 +512,7 @@ p {
   font-family: Montserrat;
   font-style: normal;
   font-weight: 100 900;
-  src: url(/wp-content/themes/jupiter/assets/dist/css/../fonts/montserrat/montserrat-regular-latin.woff2)
+  src: url(../../../themes/jupiter/assets/dist/fonts/montserrat/montserrat-regular-latin.woff2)
     format('woff2');
   unicode-range:
     u+00??, u+0131, u+0152-0153, u+02bb-02bc, u+02c6, u+02da, u+02dc, u+0304, u+0308, u+0329,

@@ -5,6 +5,7 @@ import { mappings } from '../config/mappings.js';
 import { site } from '../config/site.js';
 import { copyDir, exists, original, routeFile, stage, work, write } from './common.js';
 import { confirmReplacement } from './confirm.js';
+import { relativeCssUrls, relativeSiteUrl } from './paths.js';
 
 const allowed = new Set<string>(site.pages.map(page => page.route));
 function localRoute(href: string, base: string) {
@@ -28,12 +29,14 @@ async function main() {
       if (item.isDirectory()) await copyAssets(file);
       else if (!/\.(html?|json|xml|txt|js)$/i.test(item.name)) {
         const relative = path.relative(original, file);
-        await write(path.join(stage, relative), await fs.readFile(file));
+        const data = await fs.readFile(file);
+        await write(path.join(stage, relative), item.name.endsWith('.css') ? relativeCssUrls(data.toString('utf8'), relative) : data);
       }
     }
   }
   await copyAssets(original);
   for (const page of site.pages) {
+    const pageFile = page.route.replace(/^\/+/, '') + 'index.html';
     const sourceFile = page.route === '/' ? path.join(work, 'index.html') : routeFile(page.route, work);
     if (!await exists(sourceFile)) {
       // The home template supplies a consistent shell when the approved source has no matching route.
@@ -50,13 +53,13 @@ async function main() {
       const href = $(el).attr('href') || '';
       if (href.startsWith('#')) return;
       const route = localRoute(href, site.sourceUrl);
-      if (route) $(el).attr('href', route);
+      if (route) $(el).attr('href', relativeSiteUrl(pageFile, route));
       else $(el).replaceWith($(el).contents());
     });
     $('form[action]').each((_, el) => {
       const route = localRoute($(el).attr('action') || '', site.sourceUrl);
       if (!route) $(el).removeAttr('action').removeAttr('method');
-      else $(el).attr('action', route);
+      else $(el).attr('action', relativeSiteUrl(pageFile, route));
     });
     $('[src],link[href]').each((_, el) => {
       const attr = $(el).attr('src') ? 'src' : 'href';
@@ -64,7 +67,7 @@ async function main() {
       if (/^(?:data:|#)/.test(value)) return;
       try {
         const url = new URL(value, site.sourceUrl);
-        if (url.hostname === site.sourceHost) $(el).attr(attr, url.pathname + url.search);
+        if (url.hostname === site.sourceHost) $(el).attr(attr, relativeSiteUrl(pageFile, url.pathname + url.search));
         else if (attr === 'src') $(el).remove();
       } catch { /* leave malformed source for validation */ }
     });
@@ -73,14 +76,14 @@ async function main() {
       try {
         const url = new URL(value);
         if (url.hostname === site.sourceHost) {
-          if (existsSync(path.join(original, url.pathname))) $(el).attr('content', url.pathname + url.search);
+          if (existsSync(path.join(original, url.pathname))) $(el).attr('content', relativeSiteUrl(pageFile, url.pathname + url.search));
           else $(el).remove();
         }
       } catch { /* non-URL metadata */ }
     });
     $('style').each((_, el) => {
       const css = $(el).html() || '';
-      $(el).html(css.replace(/\/\*# sourceURL=https?:\/\/[^*]+\*\//g, ''));
+      $(el).html(relativeCssUrls(css.replace(/\/\*# sourceURL=https?:\/\/[^*]+\*\//g, ''), pageFile));
     });
     $('[onclick]').removeAttr('onclick');
     $('[hreflang], [lang]').not('html').each((_, el) => {
@@ -94,11 +97,11 @@ async function main() {
     const nav = site.pages.map(item => {
       const label = item.key === 'home' ? 'Home' : item.key === 'bet' ? 'Bet' : 'Casino';
       const current = item.route === page.route ? ' aria-current="page"' : '';
-      return `<a href="${item.route}"${current}>${label}</a>`;
+      return `<a href="${relativeSiteUrl(pageFile, item.route)}"${current}>${label}</a>`;
     }).join('');
     const brand = logoSrc
-      ? `<a class="site-brand" href="/" aria-label="1Win home"><img src="${logoSrc}" alt="1Win" width="134" height="58"></a>`
-      : '<a class="site-brand" href="/">1Win</a>';
+      ? `<a class="site-brand" href="${relativeSiteUrl(pageFile, '/')}" aria-label="1Win home"><img src="${logoSrc}" alt="1Win" width="134" height="58"></a>`
+      : `<a class="site-brand" href="${relativeSiteUrl(pageFile, '/')}" >1Win</a>`;
     $('header').first().html(`<div class="head-container site-shell-header">${brand}<nav class="site-shell-nav" aria-label="Main navigation">${nav}</nav></div>`);
     $('footer').first().html(`<div class="container site-shell-footer"><nav class="site-shell-nav" aria-label="Footer navigation">${nav}</nav></div>`);
     $('*[data-href]').remove();

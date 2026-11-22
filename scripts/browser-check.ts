@@ -6,7 +6,7 @@ import { root } from './common.js';
 import { createStaticServer } from './serve.js';
 
 async function main() {
-  const server = createStaticServer();
+  const server = createStaticServer(undefined, false, '/1win-test/');
   await new Promise<void>((resolve, reject) => {
     server.once('error', reject);
     server.listen(0, '127.0.0.1', resolve);
@@ -14,6 +14,7 @@ async function main() {
   const address = server.address();
   if (!address || typeof address === 'string') throw new Error('No local server port');
   const origin = `http://127.0.0.1:${address.port}`;
+  const siteBase = `${origin}/1win-test`;
   let browser;
   const failures: string[] = [];
   try {
@@ -28,7 +29,7 @@ async function main() {
         page.on('pageerror', error => failures.push(`${label}: JS error ${error.message}`));
         page.on('console', message => { if (message.type() === 'error') failures.push(`${label}: console ${message.text()}`); });
         page.on('response', response => { if (response.status() >= 400) failures.push(`${label}: HTTP ${response.status()} ${response.url()}`); });
-        const response = await page.goto(origin + pageSpec.route, { waitUntil: 'networkidle' });
+        const response = await page.goto(siteBase + pageSpec.route, { waitUntil: 'networkidle' });
         if (response?.status() !== 200) failures.push(`${label}: page did not return HTTP 200`);
         const pageWidth = await page.evaluate(() => document.documentElement.scrollWidth);
         if (pageWidth > width + 2) failures.push(`${label}: horizontal overflow ${pageWidth}px`);

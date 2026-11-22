@@ -6,6 +6,8 @@ import { dist, exists, root, routeFile, stage, targetUrl } from './common.js';
 
 const errors: string[] = [];
 const allowed = new Set<string>(site.pages.map(page => page.route));
+const previewOrigin = 'https://aslstudio.github.io';
+const previewPrefix = '/1win-test/';
 async function filesUnder(dir: string): Promise<string[]> {
   if (!await exists(dir)) return [];
   const out: string[] = [];
@@ -50,6 +52,7 @@ async function main() {
       }
     }
     const canonical = targetUrl(page.route);
+    const previewPage = previewOrigin + previewPrefix + page.route.replace(/^\/+/, '');
     if ($('html').attr('lang') !== site.locale) errors.push(`${page.route}: wrong lang`);
     if ($('h1').length !== 1) errors.push(`${page.route}: expected one h1, got ${$('h1').length}`);
     if ($('title').length !== 1 || !$('title').text().trim()) errors.push(`${page.route}: missing unique title`);
@@ -75,17 +78,25 @@ async function main() {
     $('a[href],form[action]').each((_, el) => {
       const value = $(el).attr('href') || $(el).attr('action') || '';
       if (!value || value.startsWith('#') || value.startsWith('mailto:') || value.startsWith('tel:')) return;
+      if (value.startsWith('/')) errors.push(`${page.route}: root-relative internal link ${value}`);
       try {
         const url = new URL(value, canonical);
         if (url.origin !== site.targetOrigin) errors.push(`${page.route}: external clickable URL ${value}`);
         else if (!allowed.has(url.pathname)) errors.push(`${page.route}: excluded route ${value}`);
+        const preview = new URL(value, previewPage);
+        if (preview.origin !== previewOrigin || !preview.pathname.startsWith(previewPrefix) || !allowed.has(preview.pathname.slice(previewPrefix.length - 1))) {
+          errors.push(`${page.route}: link breaks under GitHub Pages ${value}`);
+        }
       } catch { errors.push(`${page.route}: malformed URL ${value}`); }
     });
     $('img[src],link[rel="stylesheet"][href],link[rel="icon"][href],source[src],script[src]').each((_, el) => {
       const value = $(el).attr('src') || $(el).attr('href') || '';
+      if (value.startsWith('/')) errors.push(`${page.route}: root-relative resource ${value}`);
       try {
         const url = new URL(value, canonical);
         if (url.origin !== site.targetOrigin) errors.push(`${page.route}: external resource ${value}`);
+        const preview = new URL(value, previewPage);
+        if (preview.origin !== previewOrigin || !preview.pathname.startsWith(previewPrefix)) errors.push(`${page.route}: resource breaks under GitHub Pages ${value}`);
       } catch { errors.push(`${page.route}: malformed resource ${value}`); }
     });
     for (const el of $('img[src],link[rel="stylesheet"][href],link[rel="icon"][href],source[src],script[src]').toArray()) {
@@ -97,7 +108,12 @@ async function main() {
     }
     for (const el of $('meta[name="msapplication-TileImage"][content]').toArray()) {
       const value = $(el).attr('content') || '';
-      if (!await exists(path.join(dist, value.replace(/^\/+/, '')))) errors.push(`${page.route}: missing tile icon ${value}`);
+      const url = new URL(value, canonical);
+      if (value.startsWith('/') || !await exists(path.join(dist, decodeURIComponent(url.pathname)))) errors.push(`${page.route}: missing or root-relative tile icon ${value}`);
+    }
+    for (const el of $('style,[style]').toArray()) {
+      const css = el.tagName === 'style' ? $(el).html() || '' : $(el).attr('style') || '';
+      if (/url\(\s*['"]?\/(?!\/)/.test(css)) errors.push(`${page.route}: root-relative inline CSS resource`);
     }
     $('article img').each((_, el) => {
       if (!$(el).attr('alt')) errors.push(`${page.route}: content image lacks alt`);
@@ -109,10 +125,14 @@ async function main() {
     for (const match of css.matchAll(/url\(\s*['"]?([^)'"]+)/g)) {
       const value = match[1];
       if (value.startsWith('data:') || value.startsWith('#')) continue;
+      if (value.startsWith('/')) errors.push(`${path.relative(dist, cssFile)}: root-relative CSS resource ${value}`);
       try {
-        const url = new URL(value, `https://1-win.co.tz/${path.relative(dist, cssFile).replaceAll(path.sep, '/')}`);
+        const relativeCssFile = path.relative(dist, cssFile).replaceAll(path.sep, '/');
+        const url = new URL(value, `https://1-win.co.tz/${relativeCssFile}`);
         if (url.origin !== site.targetOrigin) errors.push(`${path.relative(dist, cssFile)}: external CSS resource ${value}`);
         else if (!await exists(path.join(dist, decodeURIComponent(url.pathname)))) errors.push(`${path.relative(dist, cssFile)}: missing CSS resource ${value}`);
+        const preview = new URL(value, `${previewOrigin}${previewPrefix}${relativeCssFile}`);
+        if (preview.origin !== previewOrigin || !preview.pathname.startsWith(previewPrefix)) errors.push(`${relativeCssFile}: CSS resource breaks under GitHub Pages ${value}`);
       } catch { errors.push(`${path.relative(dist, cssFile)}: malformed CSS resource ${value}`); }
     }
   }

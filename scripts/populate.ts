@@ -6,6 +6,7 @@ import { site } from '../config/site.js';
 import { exists, root, routeFile, stage, targetUrl, write } from './common.js';
 import { formatStage } from './format.js';
 import { confirmReplacement } from './confirm.js';
+import { relativeSiteUrl } from './paths.js';
 
 type RecordData = { title: string; description: string; html: string; source: string };
 
@@ -19,6 +20,7 @@ async function main() {
   }
   if (stageAlreadyPopulated) await confirmReplacement(stage);
   for (const page of site.pages) {
+    const pageFile = page.route.replace(/^\/+/, '') + 'index.html';
     const recordFile = path.join(root, 'content', `${page.key}.json`);
     if (!await exists(recordFile)) throw new Error(`Missing extracted content: ${recordFile}`);
     const record = JSON.parse(await fs.readFile(recordFile, 'utf8')) as RecordData;
@@ -31,6 +33,7 @@ async function main() {
       try {
         const url = new URL(href, site.targetOrigin);
         if (url.origin !== site.targetOrigin || !site.pages.some(p => p.route === url.pathname)) article(el).replaceWith(text);
+        else article(el).attr('href', relativeSiteUrl(pageFile, url.pathname + url.search + url.hash));
       } catch { article(el).replaceWith(text); }
     });
     for (const el of article('img').toArray()) {
@@ -38,6 +41,7 @@ async function main() {
       const match = src.match(/docx-(\d+)\.png$/);
       const index = match ? Number(match[1]) - 1 : -1;
       article(el).attr('alt', imageAlts[page.key]?.[index] || '').attr('loading', 'lazy');
+      if (src.startsWith('/')) article(el).attr('src', relativeSiteUrl(pageFile, src));
       if (index >= 0) {
         const filePath = path.join(root, 'content/media', page.key, `docx-${index + 1}.png`);
         if (await exists(filePath)) {
@@ -126,9 +130,9 @@ async function main() {
     $('head').append(`<meta name="description" content="${escapeHtml(record.description)}">`);
     $('head').append(`<link rel="canonical" href="${canonical}"><link rel="alternate" hreflang="${site.locale}" href="${canonical}">`);
     $('head').append(`<meta property="og:url" content="${canonical}"><meta property="og:title" content="${escapeHtml(record.title)}"><meta property="og:description" content="${escapeHtml(record.description)}">`);
-    $('head').append('<link rel="stylesheet" href="/assets/adapter.css">');
+    $('head').append(`<link rel="stylesheet" href="${relativeSiteUrl(pageFile, '/assets/adapter.css')}">`);
     $('body').append('<div class="copy-toast" role="status" aria-live="polite" data-copy-toast></div>');
-    $('body').append('<script src="/assets/adapter.js" defer></script>');
+    $('body').append(`<script src="${relativeSiteUrl(pageFile, '/assets/adapter.js')}" defer></script>`);
     $('html').attr('lang', site.locale);
     $('body').addClass('site-adapted');
     await write(file, $.html());
